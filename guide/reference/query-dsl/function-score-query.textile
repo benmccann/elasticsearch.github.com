@@ -175,6 +175,24 @@ You can provide this parameter like this:
 The parameter "scale" will then be adjusted automatically to assure that the score function computes a score of 0.33 for hotels that are 2km away from the desired location.
 
 
+If your field is a date field, you can set @scale@ and @offset@ as days, weeks, and so on. Example: 
+
+<pre class="prettyprint lang-js">
+"DECAY_FUNCTION": {
+        "FIELD_NAME": {
+              "origin": "2013-09-17",
+              "scale": "10d",
+              "offset": "5d",
+              "decay" : 0.5
+        }
+    }
+</pre> 
+
+
+The format of the origin depends on the "@date format@":http:./../mapping/date-format.html defined in your mapping. If you do not define the origin, the current time is used. 
+In this example, documents with a field value between 2013-09-12 and 2013-09-22 would get a weight of 1.0 and documents which are 15 days from that date a weight of 0.5. 
+
+
 h3. Normal decay, keyword "gauss"
 
 The score is computed as
