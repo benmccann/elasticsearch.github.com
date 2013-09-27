@@ -29,7 +29,7 @@ curl -XDELETE 'localhost:9200/_river/my_river/'
 
 h1. Cluster Allocation
 
-p. Rivers are singletons within the cluster. They get allocated automatically to one of the nodes and run. If that node fails, an river will be automatically allocated to another node.
+p. Rivers are singletons within the cluster. They get allocated automatically to one of the nodes and run. If that node fails, a river will be automatically allocated to another node.
 
 p. River allocation on nodes can be controlled on each node. The @node.river@ can be set to @_none_@ disabling any river allocation to it. The @node.river@ can also include a comma separated list of either river names or types controlling the rivers allowed to run on it. For example: @my_river1,my_river2@, or @dummy,twitter@.
 
